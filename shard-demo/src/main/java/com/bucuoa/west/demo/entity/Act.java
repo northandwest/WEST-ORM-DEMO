@@ -20,7 +20,7 @@ import com.bucuoa.west.orm.shard.annonation.ShardTable;
 
 @Entity
 @Table(name = "activity")
-@ShardTable(policy="hash",nums=256,shards=4)
+@ShardTable(policy="murhash",nums=2,shards=2)
 public class Act  extends BaseShardEntity implements Serializable{
 
 	@Transient

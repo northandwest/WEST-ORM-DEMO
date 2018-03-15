@@ -32,14 +32,14 @@ public class ActivityController {
 	}
 	
 	@RequestMapping(value = "/save")
-	public String save(RedirectAttributes redirectAttributes,Act entity) {
-		
+	public String save(RedirectAttributes redirectAttributes) {
+		Act entity = new Act();
 		entity.setPlaceName("半亩园");
 		entity.setTitle(new Date().toLocaleString()+"-"+entity.getPlaceName());
 		entity.setCreater("");
 		entity.setCreateTime(new Date());
 		entity.setUuid(getUUID());
-		int place_id = new Random().nextInt();
+		int place_id = new Random().nextInt(100);
 		entity.setPlaceId(place_id);
 		try {
 			Object idx = actService.saveEntity(entity);
@@ -58,14 +58,14 @@ public class ActivityController {
 	
 	@RequestMapping(value = "/save2")
 	@ResponseBody
-	public String save2(RedirectAttributes redirectAttributes,Act entity) {
-		
+	public String save2(RedirectAttributes redirectAttributes) {
+		Act entity = new Act();
 		entity.setPlaceName("半亩园");
 		entity.setTitle(new Date().toLocaleString()+"-"+entity.getPlaceName());
 		entity.setCreater("");
 		entity.setCreateTime(new Date());
 		entity.setUuid(getUUID());
-		int place_id = new Random().nextInt();
+		int place_id = new Random().nextInt(15);
 		entity.setPlaceId(place_id);
 		try {
 			Object idx = actService.saveEntity(entity);
