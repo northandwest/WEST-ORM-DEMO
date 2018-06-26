@@ -8,5 +8,6 @@
   	<module>shard-demo</module>
   	<module>multi-datasource-demo</module>
   	<module>read-write-split</module>
+  	<module>normal-best-practice</module>
   </modules>
 </project>
