@@ -50,6 +50,21 @@ public class ActivityController {
 		return "{name:'王府井'}";
 	}
 	
+	@RequestMapping(value = "/list2/{placeId}")
+	@ResponseBody
+	public String list2(@PathVariable("placeId") Long placeId) {
+		
+		List<Act> list = actService.getListByBean(placeId);
+		
+		for(Act act :list)
+		{
+			System.out.println(act.getTitle());
+			
+		}
+		
+		return "{name:'王府井'}";
+	}
+	
 	@RequestMapping(value = "/save")
 	public String save(RedirectAttributes redirectAttributes) {
 		Act entity = new Act();

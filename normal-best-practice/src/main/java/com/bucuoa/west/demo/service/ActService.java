@@ -28,4 +28,15 @@ public class ActService extends SingleBaseService<Act,Long> {
 		
 		return queryListMap;
 	}
+	
+	
+	public List<Act> getListByBean(Long palceId)
+	{
+		String sql  ="select * from activity where place_id={}";
+		
+		List<Act> queryListBean = dao.queryListBean(Act.class, sql, palceId);
+		
+		
+		return queryListBean;
+	}
 }
